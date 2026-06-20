@@ -9,6 +9,6 @@ RUN apt-get update && apt-get install -y curl zip unzip wget python3 git python3
 # Install Claude
 RUN curl -fsSL https://claude.ai/install.sh | bash
 
-COPY --from=ghcr.io/trolldemorted/ghidra-rpc:latest /ghidra-headless-cli /ghidra-headless-cli
+COPY --from=ghcr.io/trolldemorted/ghidra-headless-cli/ghidra-rpc:latest /ghidra-headless-cli /ghidra-headless-cli
 
 ENTRYPOINT sleep 999999999
