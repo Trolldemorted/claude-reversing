@@ -1,0 +1,14 @@
+FROM ubuntu
+
+WORKDIR /edualc
+ENV PATH="$PATH:/root/.local/bin"
+ENV IS_SANDBOX=1
+
+RUN apt-get update && apt-get install -y curl zip unzip wget python3 git python3-setuptools python3-pip maven jq build-essential file xxd gcc-mingw-w64-i686-win32
+
+# Install Claude
+RUN curl -fsSL https://claude.ai/install.sh | bash
+
+COPY --from=ghcr.io/trolldemorted/ghidra-rpc:latest /ghidra-headless-cli /ghidra-headless-cli
+
+ENTRYPOINT sleep 999999999
