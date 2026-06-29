@@ -10,5 +10,6 @@ RUN apt-get update && apt-get install -y curl zip unzip wget python3 git python3
 RUN curl -fsSL https://claude.ai/install.sh | bash
 
 COPY --from=ghcr.io/trolldemorted/ghidra-headless-cli/ghidra-rpc:latest /ghidra-headless-cli /usr/local/bin/ghidra-headless-cli
+COPY --from=ghcr.io/trolldemorted/warren:latest /usr/local/bin/warren-cli /usr/local/bin/warren-cli
 
 ENTRYPOINT sleep 999999999
