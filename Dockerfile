@@ -5,7 +5,7 @@ ENV PATH="$PATH:/root/.local/bin"
 ENV IS_SANDBOX=1
 RUN echo 'alias c="claude --dangerously-skip-permissions"' >> /root/.bashrc
 
-RUN apt-get update && apt-get install -y curl zip unzip wget python3 git python3-setuptools python3-pip maven jq build-essential file xxd gcc-mingw-w64-i686-win32 wine wine64 xvfb imagemagick gcc-mingw-w64-i686 mingw-w64-tools autoconf automake libtool make clang-tidy clang-format tmux screen gdb gdb-mingw-w64 gdb-mingw-w64-target nodejs npm
+RUN apt-get update && apt-get install -y curl zip unzip wget python3 git python3-setuptools python3-pip maven jq build-essential file xxd gcc-mingw-w64-i686-win32 wine wine64 xvfb imagemagick gcc-mingw-w64-i686 mingw-w64-tools autoconf automake libtool make clang-tidy clang-format tmux screen gdb gdb-mingw-w64 gdb-mingw-w64-target nodejs npm xdotool
 
 # Install Claude
 RUN curl -fsSL https://claude.ai/install.sh | bash
